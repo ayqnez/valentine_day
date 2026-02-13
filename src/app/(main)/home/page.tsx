@@ -31,13 +31,13 @@ export default function Index() {
                                 alt: 'Love'
                             }
                         },
-                        {
-                            href: '/flowers',
-                            img: {
-                                src: flowers.src,
-                                alt: 'Love'
-                            }
-                        },
+                        // {
+                        //     href: '/flowers',
+                        //     img: {
+                        //         src: flowers.src,
+                        //         alt: 'Love'
+                        //     }
+                        // },
                         {
                             href: '/music',
                             img: {

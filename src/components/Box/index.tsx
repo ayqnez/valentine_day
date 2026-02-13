@@ -26,7 +26,7 @@ export function BoxItem(props: BoxItemProps) {
     return (
         <Link href={href}>
             <div className={clsx(styles.boxItem, 'border-red', 'bg-white bg-hover-white transition-m')}>
-                <img src={img.src} alt={img.alt || 'Box Img'} width={130} height={130} />
+                <img src={img.src} alt={img.alt || 'Box Img'} width={180} height={180} />
             </div>
         </Link>
     )
