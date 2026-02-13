@@ -2,6 +2,7 @@ import BackgroundImage from '@/components/BackgroundImage';
 
 import bgMusic from '@/images/bgMusic.png'
 import MusicCard from '@/components/MusicCard';
+import HeartsRain from '@/components/HeartsRain';
 
 export const metadata = {
     title: "For my love | Muisc page",
@@ -11,6 +12,7 @@ export const metadata = {
 export default function Index() {
     return (
         <>
+            <HeartsRain variant='song' />
             <BackgroundImage src={bgMusic.src} bgClassName='bg-black'>
                 <MusicCard
                     title='This song reminds me of you (>.<)'

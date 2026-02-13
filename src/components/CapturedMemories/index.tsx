@@ -20,13 +20,15 @@ type CoverRowProps = {
     subtitle?: string
     style?: CSSProperties
     covers: CoverItem[]
-    button: ButtonProps
+    button?: ButtonProps
 }
 
-function CoverCard(props: CoverItem) {
-    const { title, type = 'image', preview, videoUrl } = props
+type FilterType = 'all' | 'image' | 'video'
 
-    return (
+function CoverCard(props: CoverItem) {
+    const { href, title, type = 'image', preview, videoUrl } = props
+
+    const cardContent = (
         <div className={clsx(styles.card, 'border-red', 'bg-white bg-hover-white transition-m')}>
             <div className={styles.media}>
                 {type === 'video' && videoUrl ? (
@@ -48,17 +50,38 @@ function CoverCard(props: CoverItem) {
                         <span>{type === 'video' ? 'VIDEO' : 'PHOTO'}</span>
                     </div>
                 )}
-
-                {type === 'video' && <span className={styles.badge}>▶</span>}
             </div>
 
             {title && <p className={styles.cardTitle}>{title}</p>}
         </div>
     )
+
+    if (type === 'image' && href) {
+        return <Link href={href}>{cardContent}</Link>
+    }
+
+    return cardContent
 }
 
 export default function CoverRow(props: CoverRowProps) {
     const { title, subtitle, covers, style, button } = props
+    // const [filter, setFilter] = useState<FilterType>('all')
+
+    // const imageCount = useMemo(
+    //     () => covers.filter((c) => (c.type || 'image') === 'image').length,
+    //     [covers]
+    // )
+
+    // const videoCount = useMemo(
+    //     () => covers.filter((c) => c.type === 'video').length,
+    //     [covers]
+    // )
+
+    // const filteredCovers = useMemo(() => {
+    //     if (filter === 'all') return covers
+    //     if (filter === 'image') return covers.filter((c) => (c.type || 'image') === 'image')
+    //     return covers.filter((c) => c.type === 'video')
+    // }, [covers, filter])
 
     return (
         <section className={clsx('bs-flex-container', styles.wrapper)}>
@@ -70,17 +93,43 @@ export default function CoverRow(props: CoverRowProps) {
                     </div>
                 )}
 
-                <div className={styles.row}>
-                    {covers.map((cover, index) => (
-                        <CoverCard key={index} {...cover} />
-                    ))}
-                </div>
+                {/* <div className={styles.toolbar}>
+                    <div className={styles.selectWrap}>
+                        <label htmlFor='coverFilter' className={styles.selectLabel}>
+                            Select type (photos, videos):
+                        </label>
+                        <select
+                            id='coverFilter'
+                            value={filter}
+                            onChange={(e) => setFilter(e.target.value as FilterType)}
+                            className={styles.select}
+                        >
+                            <option value='all'>All ({covers.length})</option>
+                            <option value='image'>Photos ({imageCount})</option>
+                            <option value='video'>Videos ({videoCount})</option>
+                        </select>
+                    </div>
+                </div> */}
 
-                <div className={styles.button}>
-                    {button &&
-                        <Link href={button.href} className={button.className}>{button.caption}</Link>
-                    }
-                </div>
+                {covers.length > 0 ? (
+                    <div className={styles.row}>
+                        {covers.map((cover, index) => (
+                            <CoverCard key={index} {...cover} />
+                        ))}
+                    </div>
+                ) : (
+                    <div className={styles.emptyState}>
+                        Empty
+                    </div>
+                )}
+
+                {button && (
+                    <div className={styles.button}>
+                        <Link href={button.href} className={button.className}>
+                            {button.caption}
+                        </Link>
+                    </div>
+                )}
             </div>
         </section>
     )

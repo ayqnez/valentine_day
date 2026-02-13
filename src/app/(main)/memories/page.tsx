@@ -1,4 +1,5 @@
 import BackgroundImage from "@/components/BackgroundImage"
+import HeartsRain from "@/components/HeartsRain"
 import CoverRow from "@/components/CapturedMemories"
 
 import bgMusic from '@/images/bgMusic.png'
@@ -11,13 +12,14 @@ export const metadata = {
 export default function Index() {
     return (
         <>
+            <HeartsRain variant="photos"/>
             <BackgroundImage
                 src={bgMusic.src}
-                bgClassName="bg-black"
+                bgClassName="bg-white"
             >
                 <CoverRow
                     title='Captured Memories'
-                    subtitle='Photos & videos'
+                    subtitle='Photos'
                     button={{
                         href: '/home',
                         caption: 'Return',
@@ -25,19 +27,34 @@ export default function Index() {
                     }}
                     covers={[
                         {
-                            title: 'Test',
-                            type: 'video',
-                            videoUrl: '/videos/home.mp4',
+                            title: 'Love is gaming together',
+                            type: 'image',
+                            preview: { src: '/images/1.png', alt: '' }
                         },
-                        // {
-                        //     title: 'Test',
-                        //     type: 'video',
-                        //     videoUrl: '/videos/ala1.mp4',
-                        // },
                         {
-                            title: 'Test',
-                            type: 'video',
-                            videoUrl: '/videos/ala2.mp4',
+                            title: 'Game',
+                            type: 'image',
+                            preview: { src: '/images/2.png', alt: '' }
+                        },
+                        {
+                            title: 'Game',
+                            type: 'image',
+                            preview: { src: '/images/3.png', alt: '' }
+                        },
+                        {
+                            title: 'Game',
+                            type: 'image',
+                            preview: { src: '/images/4.png', alt: '' }
+                        },
+                        {
+                            title: 'Game',
+                            type: 'image',
+                            preview: { src: '/images/5.png', alt: '' }
+                        },
+                        {
+                            title: 'Game',
+                            type: 'image',
+                            preview: { src: '/images/6.png', alt: '' }
                         }
                     ]}
                 />

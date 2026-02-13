@@ -19,7 +19,7 @@ export default function Index() {
     return (
         <>
             <HeartsRain />
-            <BackgroundImage src={bgMain.src} bgClassName='bg-black'>
+            <BackgroundImage src={bgMain.src} bgClassName='bg-white'>
                 <BoxGrid
                     title='These are for you!'
                     subtitle='I hope you like it, I love you!'
