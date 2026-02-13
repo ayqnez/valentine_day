@@ -29,20 +29,29 @@ export default function Index() {
                             img: {
                                 src: love.src,
                                 alt: 'Love'
+                            },
+                            quiz: {
+                                question: 'Кто у тебя самый любимый человек на свете?',
+                                options: [
+                                    { id: 'a', label: 'Мой любимый', isCorrect: true },
+                                    { id: 'b', label: 'Аян', isCorrect: true },
+                                    { id: 'c', label: 'Рахим', isCorrect: true }
+                                ]
                             }
                         },
-                        // {
-                        //     href: '/flowers',
-                        //     img: {
-                        //         src: flowers.src,
-                        //         alt: 'Love'
-                        //     }
-                        // },
                         {
                             href: '/music',
                             img: {
                                 src: lock.src,
                                 alt: 'Love'
+                            },
+                            quiz: {
+                                question: 'Кого Аян любит больше всего на свете?',
+                                options: [
+                                    { id: 'a', label: 'Дариночку', isCorrect: true },
+                                    { id: 'b', label: 'Свою любимую', isCorrect: true },
+                                    { id: 'c', label: 'Того, кто читает этот ответ', isCorrect: true }
+                                ]
                             }
                         },
                         {
@@ -50,6 +59,14 @@ export default function Index() {
                             img: {
                                 src: letter.src,
                                 alt: 'Love'
+                            },
+                            quiz: {
+                                question: 'Будем ли мы с тобой до конца вместе, несмотря на все невзгоды и ссоры?',
+                                options: [
+                                    { id: 'a', label: 'Да', isCorrect: true },
+                                    { id: 'b', label: 'Yes', isCorrect: true },
+                                    { id: 'c', label: 'Абсолютно, да', isCorrect: true }
+                                ]
                             }
                         }
                     ]}

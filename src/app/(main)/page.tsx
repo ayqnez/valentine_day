@@ -16,7 +16,7 @@ export const metadata = {
 export default function Index() {
   return (
     <>
-      <BackgroundImage src={bgMain.src} bgClassName='bg-black'>
+      <BackgroundImage src={bgMain.src} bgClassName='bg-white'>
         <Promo
           info={
             <>

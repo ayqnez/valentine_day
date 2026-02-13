@@ -8,6 +8,9 @@
     .boxContainer {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        max-width: 980px;
+        padding: 0 16px;
 
         .boxContent {
             text-align: center;
@@ -24,8 +27,13 @@
             gap: 20px;
         }
     }
+}
 
-
+.boxItemButton {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
 }
 
 .boxItem {
@@ -35,12 +43,119 @@
     width: 100%;
     min-width: 250px;
     height: 250px;
-
     border-radius: 16px;
 
     img {
-        max-width: 100%;
-        max-height: 100%;
         object-fit: contain;
+    }
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 16px;
+}
+
+.modalCard {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+    border-radius: 16px;
+    border: 2px solid #ef7aa8;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.modalTitle {
+    margin: 0 0 10px;
+}
+
+.modalQuestion {
+    margin: 0 0 14px;
+    color: #374151;
+    font-size: 16px;
+}
+
+.options {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.optionItem {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.optionItem input {
+    cursor: pointer;
+}
+
+.wrongText {
+    margin: 4px 0 12px;
+    color: #b91c1c;
+    font-weight: 600;
+}
+
+.correctText {
+    margin: 4px 0 12px;
+    color: #15803d;
+    font-weight: 600;
+}
+
+.modalActions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btnPrimary {
+    background: #ef7aa8;
+    color: #fff;
+}
+
+.btnGhost {
+    background: #fff;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+@media (max-width: 780px) {
+    .boxWrapper .boxContainer .boxGrid {
+        grid-template-columns: repeat(2, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .boxWrapper .boxContainer .boxGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .boxItem {
+        max-width: 260px;
+        margin: 0 auto;
     }
 }

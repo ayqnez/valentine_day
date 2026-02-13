@@ -3,15 +3,15 @@
 import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use'
 
-type Variant = 'photos' | 'song' | 'letter' | 'hearts'
+type Variant = 'flowers' | 'lips' | 'song' | 'hearts'
 
 export default function HeartsRain({ variant = 'hearts' }: { variant?: Variant }) {
     const { width, height } = useWindowSize()
 
     const drawShape = (ctx: CanvasRenderingContext2D) => {
-        if (variant === 'photos') return drawPolaroid(ctx)
+        if (variant === 'flowers') return drawFlower(ctx)
+        if (variant === 'lips') return drawKissMark(ctx)
         if (variant === 'song') return drawNote(ctx)
-        if (variant === 'letter') return drawEnvelope(ctx)
         return drawHeart(ctx)
     }
 
@@ -19,7 +19,7 @@ export default function HeartsRain({ variant = 'hearts' }: { variant?: Variant }
         <Confetti
             width={width}
             height={height}
-            numberOfPieces={60}
+            numberOfPieces={70}
             gravity={0.04}
             wind={0}
             recycle
@@ -29,26 +29,64 @@ export default function HeartsRain({ variant = 'hearts' }: { variant?: Variant }
     )
 }
 
-const drawHeart = (ctx: CanvasRenderingContext2D) => {
+const drawHeart = (ctx: CanvasRenderingContext2D, x = 0, y = 0, s = 1, color = 'rgba(255, 0, 90, 0.9)') => {
     ctx.beginPath()
-    ctx.moveTo(0, 0)
-    ctx.bezierCurveTo(-6, -6, -12, 6, 0, 18)
-    ctx.bezierCurveTo(12, 6, 6, -6, 0, 0)
-    ctx.fillStyle = 'rgba(255, 0, 90, 0.85)'
+    ctx.moveTo(x, y)
+    ctx.bezierCurveTo(x - 3 * s, y - 3 * s, x - 6 * s, y + 3 * s, x, y + 9 * s)
+    ctx.bezierCurveTo(x + 6 * s, y + 3 * s, x + 3 * s, y - 3 * s, x, y)
+    ctx.fillStyle = color
     ctx.fill()
 }
 
-const drawPolaroid = (ctx: CanvasRenderingContext2D) => {
-    const w = 12
-    const h = 14
+const drawFlower = (ctx: CanvasRenderingContext2D) => {
+    for (let i = 0; i < 5; i++) {
+        const angle = (Math.PI * 2 * i) / 5
+        const x = Math.cos(angle) * 4
+        const y = Math.sin(angle) * 4
+
+        ctx.beginPath()
+        ctx.ellipse(x, y, 3.8, 2.8, angle, 0, Math.PI * 2)
+        ctx.fillStyle = 'rgba(255, 140, 180, 0.88)'
+        ctx.fill()
+    }
+
     ctx.beginPath()
-    ctx.rect(-w / 2, -h / 2, w, h)
-    ctx.fillStyle = 'rgba(255,255,255,0.95)'
+    ctx.arc(0, 0, 2.4, 0, Math.PI * 2)
+    ctx.fillStyle = 'rgba(255, 210, 80, 0.95)'
+    ctx.fill()
+}
+
+const drawKissMark = (ctx: CanvasRenderingContext2D) => {
+    ctx.beginPath()
+    ctx.moveTo(-9, 0)
+    ctx.bezierCurveTo(-7.5, -6.2, -2.8, -6.8, 0, -2.2)
+    ctx.bezierCurveTo(2.8, -6.8, 7.5, -6.2, 9, 0)
+    ctx.bezierCurveTo(6.2, 1.2, 3.6, 1.6, 0, 0.6)
+    ctx.bezierCurveTo(-3.6, 1.6, -6.2, 1.2, -9, 0)
+    ctx.closePath()
+    ctx.fillStyle = 'rgba(200, 18, 66, 0.96)'
     ctx.fill()
 
     ctx.beginPath()
-    ctx.rect(-w / 2 + 1.5, -h / 2 + 1.5, w - 3, h - 6)
-    ctx.fillStyle = 'rgba(180,220,255,0.9)'
+    ctx.moveTo(-9.2, 0.3)
+    ctx.bezierCurveTo(-5.8, 7.2, 5.8, 7.2, 9.2, 0.3)
+    ctx.bezierCurveTo(6.6, 1.8, 3.8, 2.8, 0, 3.0)
+    ctx.bezierCurveTo(-3.8, 2.8, -6.6, 1.8, -9.2, 0.3)
+    ctx.closePath()
+    ctx.fillStyle = 'rgba(233, 30, 99, 0.97)'
+    ctx.fill()
+
+    ctx.beginPath()
+    ctx.moveTo(0, -1.6)
+    ctx.bezierCurveTo(-0.8, -0.8, -0.9, 0.6, 0, 2.4)
+    ctx.bezierCurveTo(0.9, 0.6, 0.8, -0.8, 0, -1.6)
+    ctx.closePath()
+    ctx.fillStyle = 'rgba(160, 8, 48, 0.65)'
+    ctx.fill()
+
+    ctx.beginPath()
+    ctx.ellipse(-3.2, -1.2, 2.3, 0.95, -0.25, 0, Math.PI * 2)
+    ctx.fillStyle = 'rgba(255, 180, 205, 0.45)'
     ctx.fill()
 }
 
@@ -68,22 +106,5 @@ const drawNote = (ctx: CanvasRenderingContext2D) => {
     ctx.quadraticCurveTo(10, -6, 8, -1)
     ctx.quadraticCurveTo(7, -4, 4, -4)
     ctx.fillStyle = 'rgba(30,30,30,0.9)'
-    ctx.fill()
-}
-
-const drawEnvelope = (ctx: CanvasRenderingContext2D) => {
-    const w = 14
-    const h = 10
-    ctx.beginPath()
-    ctx.rect(-w / 2, -h / 2, w, h)
-    ctx.fillStyle = 'rgba(255,255,255,0.95)'
-    ctx.fill()
-
-    ctx.beginPath()
-    ctx.moveTo(-w / 2, -h / 2)
-    ctx.lineTo(0, 0)
-    ctx.lineTo(w / 2, -h / 2)
-    ctx.closePath()
-    ctx.fillStyle = 'rgba(230,230,230,0.95)'
     ctx.fill()
 }

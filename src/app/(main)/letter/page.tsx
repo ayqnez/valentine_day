@@ -12,7 +12,7 @@ export const metadata = {
 export default function Index() {
     return (
         <>
-            <HeartsRain variant='letter' />
+            <HeartsRain variant='flowers' />
             <BackgroundImage src={bgMusic.src} bgClassName='bg-black'>
                 <Letter
                     title='Message for my love'

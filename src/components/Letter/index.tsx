@@ -17,10 +17,24 @@ export default function Letter(props: LetterProps) {
 
             <div className={styles.content}>
                 <h2>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi eaque deserunt dolores, ducimus consequuntur eligendi, eos dolor odio exercitationem illum laudantium architecto aliquam repudiandae recusandae modi aliquid fugit sunt tempora.
-                    <br /><br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore sed aperiam quo perferendis minus enim accusantium perspiciatis placeat in illo consectetur deleniti quas at, provident mollitia, maxime eos unde aut.
+                    Зай, с 14 февраля тебя {"<3"}
                 </h2>
+                <h3 style={{ marginTop: '10px', marginBottom: '10px' }}>
+                    <span>Знаешь, рядом с тобой со мной происходит какая-то магия: весь стресс, все проблемы как будто выключаются одной кнопкой.</span>
+                    <br />
+                    И эта кнопка ты.
+                    <br /><br />
+                    {/* Ты для меня не просто любимая девушка — ты мой уют, моё спокойствие и моё самое тёплое «домой» и вообще с тобой становлюсь я лучше.
+                    <br /><br /> */}
+                    Мне очень повезло и я очень рад, что мы вместе.
+                    И я хочу, чтобы впереди у нас было ещё много наших дней: с объятиями, шутками, маленькими приключениями и большими мечтами.
+                    Хочу встречать с тобой не только этот февраль, а каждый следующий — вместе, рядом.
+                    <br /><br />
+                    Спасибо тебе за тебя.
+                    Ты у меня особенная.
+                    <br />
+                    Твой аянчик 💌
+                </h3>
             </div>
 
             <Link href={button.href} className={button.className}>
