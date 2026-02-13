@@ -1,0 +1,142 @@
+* {
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+}
+
+.transition {
+  &-s {
+    transition: 0.1s;
+  }
+
+  &-m {
+    transition: 0.15s;
+  }
+
+  &-l {
+    transition: 0.2s;
+  }
+}
+
+
+.bs-flex-container {
+  padding: 120px 160px;
+
+  &.l {
+    padding: 20px 100px;
+  }
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+p,
+li {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.color {
+  &-white {
+    color: #FFFFFE;
+  }
+
+  &-purple-light {
+    color: #7B61FF;
+  }
+
+  &-red {
+    color: #EE8398;
+  }
+
+  &-purple {
+    color: #6246EA;
+  }
+
+  &-light-grey {
+    color: #D2D6DB;
+  }
+
+  &-grey {
+    color: #7e7e7e;
+  }
+
+  &-dark-grey {
+    color: #9A9494;
+  }
+
+  &-black {
+    color: #0e0e12;
+  }
+}
+
+.bg {
+  &-white {
+    background-color: #FFFFFE;
+  }
+
+  &-black {
+    background-color: #2B2C34;
+  }
+
+  &-light-black {
+    background-color: #2A2D32;
+  }
+
+  &-purple {
+    background-color: #6246EA;
+  }
+
+  &-light-grey {
+    background-color: #EFF0F3;
+  }
+
+  &-grey {
+    background-color: #C0C0C0;
+  }
+
+  &-dark-grey {
+    background-color: #9A9494;
+  }
+
+  &-green {
+    background-color: rgb(17, 74, 17);
+  }
+}
+
+.bg-hover {
+  &-white {
+    &:hover {
+      background-color: #F4F5F7;
+    }
+  }
+}
+
+.border {
+  &-red {
+    border: 3px solid #EE8398 !important;
+  }
+}
+
+.button {
+  padding: 12px 64px;
+  border-radius: 32px;
+  border: 1px solid rgba(143, 148, 155, 0.5);
+  cursor: pointer;
+
+  &.sm {
+    padding: 8px 12px;
+  }
+}

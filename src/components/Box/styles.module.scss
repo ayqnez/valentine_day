@@ -1,0 +1,46 @@
+.boxWrapper {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+
+    .boxContainer {
+        display: flex;
+        flex-direction: column;
+
+        .boxContent {
+            text-align: center;
+            padding-bottom: 30px;
+
+            h1 {
+                padding-bottom: 15px;
+            }
+        }
+
+        .boxGrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+
+}
+
+.boxItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+
+    border-radius: 16px;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
