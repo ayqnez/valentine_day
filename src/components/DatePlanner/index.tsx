@@ -168,7 +168,7 @@ export default function DatePlanner() {
                     </div>
 
                     <button
-                        className='button border-red bg-hover-white transitition-m'
+                        className='button border-red color-black bg-hover-white transitition-m'
                         onClick={() => {
                             setStarted(false)
                             setStepIndex(0)
