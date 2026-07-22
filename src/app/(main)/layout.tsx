@@ -2,19 +2,18 @@ import '../globals.css'
 import '@/styles/styles.scss'
 // import Header from '@/components/Header';
 // import Footer from '@/components/Footer';
+import { Quicksand } from 'next/font/google'
 
-export const metadata = {
-  title: "Next Site",
-  description: "Next.js",
-};
+const quicksand = Quicksand({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700']
+})
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        {/* <Header /> */}
+      <body className={quicksand.className}>
         {children}
-        {/* <Footer /> */}
       </body>
     </html>
   );
