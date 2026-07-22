@@ -7,6 +7,7 @@ import clsx from 'clsx';
 
 import bgMain from '@/images/bg.png'
 import bunnyLove from '@/images/bunny-love.gif'
+import dog from '@/images/dog.gif'
 
 export const metadata = {
   title: "For my love | Main page",
@@ -20,28 +21,27 @@ export default function Index() {
         <Promo
           info={
             <>
-              <img src={bunnyLove.src} alt="Bunny Love" />
+              <img src={dog.src} alt="Bunny Love" />
             </>
           }
           style={{ maxWidth: '820px' }}
           title={
             <>
-              Hello <br />
               <span className='color-red'>
-                My Love !
+                Привет любимая!
               </span>
             </>
           }
-          description="will you be my valentine?"
+          description="Проведешь со мной наши пол года?)"
           buttons={[
             {
-              href: '/home',
-              caption: 'Yes',
+              href: '/date',
+              caption: 'ДА!!!',
               className: 'color-dark border-red bg-hover-white transition-m'
             },
             {
               href: '/sad',
-              caption: 'No',
+              caption: 'ПНХ',
               className: 'color-dark border-red bg-hover-white transition-m'
             }
           ]}

@@ -21,7 +21,6 @@ body {
   }
 }
 
-
 .bs-flex-container {
   padding: 120px 160px;
 
@@ -32,10 +31,20 @@ body {
 
 h1 {
   font-size: 50px;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+
 }
 
 h2 {
   font-size: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
 }
 
 h3 {
@@ -45,7 +54,12 @@ h3 {
 p,
 li {
   font-size: 20px;
-  line-height: 30px;
+  line-height: 160%;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
 }
 
 .color {
@@ -91,6 +105,10 @@ li {
     background-color: #2B2C34;
   }
 
+  &-red {
+    background-color: #EE8398;
+  }
+
   &-light-black {
     background-color: #2A2D32;
   }
@@ -127,6 +145,10 @@ li {
 .border {
   &-red {
     border: 3px solid #EE8398 !important;
+  }
+
+  &-white {
+    border: 3px solid #d8d7d7 !important;
   }
 }
 

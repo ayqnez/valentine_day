@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './styles.module.css'
+import styles from './styles.module.scss'
 import clsx from 'clsx'
 import Link from "next/link";
 import { useState, useRef } from 'react';
